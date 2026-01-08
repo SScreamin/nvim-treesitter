@@ -54,7 +54,7 @@ It is strongly recommended to automate this; e.g., using the following spec with
 ```lua
 require'nvim-treesitter'.setup {
   -- Directory used for downloading and compiling parsers
-  cache_dir = vim.fs.normalize(vim.fn.stdpath('cache')
+  cache_dir = vim.fs.normalize(vim.fn.stdpath('cache'))
   -- Directory to install parsers and queries to (prepended to `runtimepath` to have priority)
   install_dir = vim.fn.stdpath('data') .. '/site'
 }
