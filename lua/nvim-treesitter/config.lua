@@ -7,6 +7,7 @@ M.tiers = { 'stable', 'unstable', 'unmaintained', 'unsupported' }
 
 ---@type TSConfig
 local config = {
+  cache_dir = vim.fs.normalize(vim.fn.stdpath('cache') --[[@as string]]),
   install_dir = vim.fs.joinpath(vim.fn.stdpath('data') --[[@as string]], 'site'),
 }
 
@@ -20,6 +21,21 @@ function M.setup(user_data)
     end
     config = vim.tbl_deep_extend('force', config, user_data)
   end
+end
+
+-- Returns the cache_dir.
+-- If the specified directory does not exist, it is created.
+-- @return string
+function M.get_cache_dir()
+  local dir = vim.fs.normalize(config.cache_dir)
+  if not vim.uv.fs_stat(dir) then
+    local ok, err = pcall(vim.fn.mkdir, dir, 'p', '0755')
+    if not ok then
+      local log = require('nvim-treesitter.log')
+      log.error(err --[[@as string]])
+    end
+  end
+  return dir
 end
 
 -- Returns the install path for parsers, parser info, and queries.

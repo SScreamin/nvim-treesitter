@@ -487,11 +487,7 @@ end
 local function install(languages, options)
   options = options or {}
 
-  local cache_dir = fs.normalize(fn.stdpath('cache') --[[@as string]])
-  if not uv.fs_stat(cache_dir) then
-    fn.mkdir(cache_dir, 'p')
-  end
-
+  local cache_dir = config.get_cache_dir()
   local install_dir = config.get_install_dir('parser')
 
   local tasks = {} ---@type async.TaskFun[]

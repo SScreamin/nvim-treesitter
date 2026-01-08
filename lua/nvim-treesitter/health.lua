@@ -88,6 +88,15 @@ local function install_health()
   end
 
   local installdir = config.get_install_dir('')
+  local cache_dir = config.get_cache_dir()
+  health.start('Cache directory')
+  health.info(cache_dir)
+  if vim.uv.fs_access(cache_dir, 'w') then
+    health.ok('is writable.')
+  else
+    health.error('is not writable.')
+  end
+
   health.start('Install directory for parsers and queries')
   health.info(installdir)
   if vim.uv.fs_access(installdir, 'w') then
