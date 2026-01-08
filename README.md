@@ -2,6 +2,8 @@
   <img src="https://github.com/nvim-treesitter/nvim-treesitter/assets/2361214/0513b223-c902-4f12-92ee-8ac4d8d6f41f" alt="nvim-treesitter">
 </h1>
 
+**NOTE:** Personal fork to to make cache directory configurable. This is useful if /home partition is configured with noexec which will block parser compilation at the default location.
+
 The `nvim-treesitter` plugin provides
 1. functions for installing, updating, and removing [**tree-sitter parsers**](SUPPORTED_LANGUAGES.md);
 2. a collection of **queries** for enabling tree-sitter features built into Neovim for these languages;
@@ -51,6 +53,8 @@ It is strongly recommended to automate this; e.g., using the following spec with
 
 ```lua
 require'nvim-treesitter'.setup {
+  -- Directory used for downloading and compiling parsers
+  cache_dir = vim.fs.normalize(vim.fn.stdpath('cache')
   -- Directory to install parsers and queries to (prepended to `runtimepath` to have priority)
   install_dir = vim.fn.stdpath('data') .. '/site'
 }
