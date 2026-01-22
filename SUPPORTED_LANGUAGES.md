@@ -4,7 +4,7 @@ The following is a list of languages for which a parser can be installed through
 
 Legend:
 - **Tier:** _stable_ (updates follow semver releases), _unstable_ (updates follow HEAD), _unmaintained_ (no automatic updates), or _unsupported_ (known to be broken, cannot be installed)
-- **Queries** available for **H**ighlights, **I**ndents, **F**olds, In**J**ections, **L**ocals
+- **Queries** available for **H**ighlights, **F**olds, **I**ndents, In**J**ections, **L**ocals
 - **Maintainer** of queries in nvim-treesitter (may be different from parser maintainer!)
 
 <!--This section of the README is automatically updated by a CI job-->
@@ -175,7 +175,7 @@ jsx (queries only)[^jsx] | unstable | `HFIJ ` | @steelsojka
 [luap](https://github.com/tree-sitter-grammars/tree-sitter-luap)[^luap] | unstable | `H    ` | @amaanq
 [luau](https://github.com/tree-sitter-grammars/tree-sitter-luau) | unstable | `HFIJL` | @amaanq
 [m68k](https://github.com/grahambates/tree-sitter-m68k) | unstable | `HF JL` | @grahambates
-[make](https://github.com/alemuller/tree-sitter-make) | unstable | `HF J ` | @lewis6991
+[make](https://github.com/tree-sitter-grammars/tree-sitter-make) | unstable | `HF J ` | @lewis6991
 [markdown](https://github.com/tree-sitter-grammars/tree-sitter-markdown)[^markdown] | unstable | `HFIJ ` | @MDeiml
 [markdown_inline](https://github.com/tree-sitter-grammars/tree-sitter-markdown)[^markdown_inline] | unstable | `H  J ` | @MDeiml
 [matlab](https://github.com/acristoffers/tree-sitter-matlab) | unstable | `HFIJL` | @acristoffers
